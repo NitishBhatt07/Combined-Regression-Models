@@ -52,7 +52,7 @@ if selected_model == 'Car Price Predict':
     if st.button("Predict Price"):
         predicted_price = rfmodel_car.predict(pd.DataFrame([[model_name,company_name,year_of_buy,kms,fuel]],
                             columns=['name','company','year','kms_driven','fuel_type']))
-        st.write("Price of Car : ",str(predicted_price[0]))
+        st.write("Price of Car : ",str(int(predicted_price[0])))
 
 elif selected_model == 'Laptop Price Predict':
     st.title("Laptop Price Predict")
@@ -126,7 +126,7 @@ elif selected_model == 'Laptop Price Predict':
        'Cpu Company', 'Cpu Core', 'Memory Size', 'Memory Type', 'Gpu Company',
        'Weight Range', 'Ram Size', 'GHZ Size']))
 
-        st.write("Price of Car : ",str(predicted_price[0]))
+        st.write("Price of Car : ",str(int(predicted_price[0])))
 
 
 
