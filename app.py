@@ -15,7 +15,7 @@ if selected_model == 'Car Price Predict':
     ## loading csv file  
     car = pd.read_csv('car cleaned data.csv')
 
-    Xgbmodel = pickle.load(open('XgbRegressor_Car_model.pkl','rb'))
+    rfmodel_car = pickle.load(open('RFRegressor_Car_model.pkl','rb'))
 
     ## getting all the companies name
     companies = sorted(car['company'].unique())
@@ -50,7 +50,7 @@ if selected_model == 'Car Price Predict':
 
     # botton predict
     if st.button("Predict Price"):
-        predicted_price = Xgbmodel.predict(pd.DataFrame([[model_name,company_name,year_of_buy,kms,fuel]],
+        predicted_price = rfmodel_car.predict(pd.DataFrame([[model_name,company_name,year_of_buy,kms,fuel]],
                             columns=['name','company','year','kms_driven','fuel_type']))
         st.write("Price of Car : ",str(predicted_price[0]))
 
@@ -60,7 +60,7 @@ elif selected_model == 'Laptop Price Predict':
     ## loading csv file  
     laptop = pd.read_csv('laptop cleaned data.csv')
 
-    Xgbmodel_laptop = pickle.load(open('XgbRegressor_Laptop_model.pkl','rb'))
+    rfmodel_laptop = pickle.load(open('RFRegressor_Laptop_model.pkl','rb'))
 
     ## getting all the companies name
     companies = sorted(laptop['Company'].unique())
@@ -120,7 +120,7 @@ elif selected_model == 'Laptop Price Predict':
 
     if st.button("Predict Price"):
 
-        predicted_price = Xgbmodel_laptop.predict(pd.DataFrame([[company_name,type_name,inches,os,Resolution,
+        predicted_price = rfmodel_laptop.predict(pd.DataFrame([[company_name,type_name,inches,os,Resolution,
         Screen,Cpu_Company,Cpu_Core,Memory_Size,Memory_Type,Gpu_Company,Weight_Range,Ram_Size,GHZ_Size]],
                           columns=['Company', 'TypeName', 'Inches', 'OpSys', 'Resolution', 'Screen',
        'Cpu Company', 'Cpu Core', 'Memory Size', 'Memory Type', 'Gpu Company',
