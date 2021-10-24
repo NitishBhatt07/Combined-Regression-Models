@@ -17,8 +17,9 @@ Here i merge two Regression Problem into one web App project. It can predict the
   
 ## Screenshots
 ### Car Price Predict
-![](images/you-picture.png)
+![](images/car_price.png)
 
 ### Laptop Price Predict
-![](images/you-picture.png)
+![](images/laptop_price_1.png)
+![](images/laptop_price_2.png)
   
